@@ -1217,7 +1217,7 @@ body {
     line-height: 18px;
     letter-spacing: 0.05em;
     color: var(--txt-c-grey);
-    padding-right: 35px;
+    padding-right: 32px;
   }
   .main-menu-item:last-child {
     padding: 0;

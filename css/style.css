@@ -562,7 +562,7 @@ body {
 }
 
 .about-text {
-  width: 320px;
+  width: 340px;
   font-weight: normal;
   font-size: 17px;
   line-height: 150%;
@@ -1209,6 +1209,7 @@ body {
     justify-content: space-between;
     text-align: justify;
     text-align-last: justify;
+    margin-left: 80px;
   }
   .main-menu-item {
     display: inline-block;
@@ -1245,6 +1246,7 @@ body {
   }
 
   .front-page-main-info {
+    width: 387px;
     align-items: flex-start;
     order: 2;
     z-index: 2;

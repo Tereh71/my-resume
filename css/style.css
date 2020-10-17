@@ -1202,6 +1202,26 @@ body {
   .desktop-element {
     display: block;
   }
+  .main-menu {
+    width: 510px;
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    text-align-last: justify;
+  }
+  .main-menu-item {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    color: var(--txt-c-grey);
+    padding-right: 35px;
+  }
+  .main-menu-item:last-child {
+    padding: 0;
+  }
 
   .front-page-my-info {
     width: 240px;

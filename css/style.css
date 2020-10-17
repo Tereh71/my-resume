@@ -17,8 +17,8 @@
   --txt-c-light: var(--c-light);
 
   /* modals */
-
   --modal-bgd-dark: rgba(20, 29, 45, 0.8);
+
   /* font */
   --font-main: "Acrom", sans-serif;
 
@@ -27,7 +27,7 @@
   --mobile: calc(300px + var(--vertical-scroll));
   --tablet: calc(640px + var(--vertical-scroll));
   --desktop: calc(900px + var(--vertical-scroll));
-  --desktop-lg: calc(1146px + var(--vertical-scroll));
+  --desktop-lg: calc(1270px + var(--vertical-scroll));
 
   /* animation */
   --animation-fast: 0.1s;
@@ -70,19 +70,29 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: var(--font-main);
   box-sizing: border-box;
 }
+
 /* COMMON */
+
 .tablet-element {
   display: none;
 }
+
 .desktop-element {
   display: none;
 }
+
+.mobile-element {
+  display: block;
+}
+
 .accent-btn {
-  background: var(--txt-c-accent);
+  background: var(--c-accent);
+  font-weight: bold;
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.05em;
@@ -92,6 +102,7 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .container {
@@ -131,10 +142,10 @@ body {
   pointer-events: none;
   display: block;
   background: var(--modal-bgd-dark);
+  z-index: 3;
 }
 
 .modal-active {
-  display: block;
   opacity: 1;
   pointer-events: all;
 }
@@ -156,12 +167,6 @@ body {
   margin: 0;
 }
 
-.body-scroll-disable {
-  overflow: hidden;
-}
-
-/* MOBILE MENU MODAL */
-
 .modal-close-btn {
   font-size: 18px;
   position: absolute;
@@ -169,18 +174,25 @@ body {
   top: 16px;
   right: 16px;
   cursor: pointer;
-  padding: 10px 14px;
 }
+
+.body-scroll-disable {
+  overflow: hidden;
+}
+
+/* MOBILE MENU MODAL */
 
 .mobile-menu-close-btn {
   background: var(--c-accent);
   color: var(--c-light);
+  padding: 10px 14px;
 }
 
 .mobile-menu-items {
   display: flex;
   flex-direction: column;
 }
+
 .mobile-menu-item {
   font-weight: bold;
   font-size: 15px;
@@ -193,36 +205,35 @@ body {
   margin-bottom: 35px;
 }
 
+.mobile-menu-my-tel {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 150%;
+  text-align: center;
+  text-decoration: none;
+  color: var(--txt-c-dark);
+  margin-bottom: 15px;
+}
+.mobile-menu-my-mail {
+  font-size: 17px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--txt-c-dark);
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
 .mobile-menu-contacts {
   display: flex;
   flex-direction: column;
 }
-.mobile-menu-my-tel {
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--txt-c-grey);
-  text-decoration: none;
-  text-align: center;
-  margin-bottom: 35px;
-}
-.mobile-menu-my-mail {
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.05em;
-
-  color: var(--txt-c-grey);
-  text-decoration: none;
-  text-align: center;
-  margin-bottom: 5px;
-}
 
 /* MY VIDEO MODAL */
+
 .my-video-content {
   width: 100%;
 }
+
 .my-video-container {
   display: flex;
   align-items: center;
@@ -236,16 +247,18 @@ body {
   color: var(--c-dark);
   padding: 10px 14px;
 }
-/* MY REQUECT MODAL */
 
-.modal-reqvest-recived {
+/* REQUEST RECEIVED MODAL */
+
+.modal-request-received {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px 10px;
   box-sizing: border-box;
 }
-.reqvest-recived-container {
+
+.request-received-container {
   background: var(--c-light);
   padding: 80px 10px;
   text-align: center;
@@ -255,16 +268,17 @@ body {
   justify-content: center;
   position: relative;
 }
-.reqvest-recived-title {
+
+.request-received-title {
+  color: var(--txt-c-accent);
   font-weight: bold;
   font-size: 24px;
   line-height: 29px;
   text-transform: uppercase;
-  color: var(--txt-c-accent);
   margin-bottom: 20px;
   margin-top: 0;
 }
-.reqvest-recived-primary-msg {
+.request-received-primary-msg {
   font-weight: bold;
   font-size: 36px;
   line-height: 43px;
@@ -273,11 +287,12 @@ body {
   margin-bottom: 20px;
   margin-top: 0;
 }
-.reqvest-recived-secondary-msg {
+
+.request-received-secondary-msg {
   font-size: 17px;
   line-height: 25px;
   text-align: center;
-  margin-bottom: 130px;
+  width: 185px;
   margin: 0;
 }
 
@@ -330,23 +345,35 @@ body {
 }
 
 /* FRONT PAGE */
+
 .front-page {
-  min-width: 320px;
+  width: 100%;
   background: var(--c-dark);
-  padding: 30px 10px 55px 10px;
-  box-sizing: border-box;
+}
+
+.front-page-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.front-page-main-info,
+.front-page-my-info,
+.front-page-about-me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .front-page-my-name {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 26px;
   line-height: 31px;
   text-transform: uppercase;
   color: var(--txt-c-accent);
   text-align: center;
-  margin: 35px 0px 10px 0px;
+  margin: 35px 0 10px 0;
 }
 
 .front-page-profession {
@@ -354,8 +381,8 @@ body {
   font-size: 35px;
   line-height: 42px;
   text-transform: uppercase;
-  color: var(--txt-c-light);
   text-align: center;
+  color: var(--txt-c-light);
   margin-bottom: 20px;
 }
 
@@ -374,6 +401,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .navigation-part {
   display: flex;
   flex-direction: row;
@@ -385,10 +413,9 @@ body {
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: var(--txt-c-accent);
   text-decoration: none;
-  margin-right: 20px;
+  margin: 0 20px 0 0;
 }
 
 .mobile-menu {
@@ -400,22 +427,24 @@ body {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: 0 6px 0 0;
 }
+
 .mobile-menu i {
   color: var(--c-light);
-  width: 10px;
 }
+
 .front-page-my-info {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .front-page-about-me-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .front-page-gallery-btn {
   margin-bottom: 40px;
 }
@@ -433,7 +462,7 @@ body {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--txt-c-light);
-  margin: 0px 0px 15px 0px;
+  margin: 0 0 15px 0;
 }
 
 .front-page-my-video-btn {
@@ -457,7 +486,8 @@ body {
   margin-bottom: 40px;
 }
 
-/* EXPIERENCE */
+/* EXPERIENCE */
+
 .experience-title {
   width: 240px;
   font-weight: bold;
@@ -466,7 +496,7 @@ body {
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--c-light);
+  color: var(--txt-c-light);
   margin: 0 0 30px 0;
 }
 
@@ -482,14 +512,20 @@ body {
   align-items: center;
   margin-right: 10px;
 }
+
 .experience-dots-item {
   color: var(--c-grey-blue);
   font-size: 8px;
   margin-right: 5px;
 }
+
+.experience-dots-item-accent {
+  color: var(--c-accent);
+}
+
 .experience-text {
   color: var(--txt-c-light);
-  margin: 0px;
+  margin: 0;
   font-size: 16px;
   line-height: 19px;
 }
@@ -497,9 +533,6 @@ body {
 .experience-container {
   display: flex;
   flex-direction: column;
-}
-.experience-dots-item-accent {
-  color: var(--c-accent);
 }
 
 /* ABOUT PAGE */
@@ -534,7 +567,6 @@ body {
   line-height: 150%;
   color: var(--c-dark);
   margin: 0 0 30px 0;
-  width: 320px;
 }
 
 .about-text:last-child {
@@ -640,9 +672,12 @@ body {
 /* TEAM PROJECT */
 
 .team-projects .container {
+  padding-bottom: 0;
+}
+
+.team-projects {
   position: relative;
-  overflow-x: hidden;
-  padding-bottom: 0px;
+  overflow: hidden;
 }
 
 .team-projects-title {
@@ -653,8 +688,8 @@ body {
 
 .team-projects-title-bgd {
   position: absolute;
-  top: -50px;
-  left: 45px;
+  top: 15px;
+  left: 57px;
   font-weight: bold;
   font-size: 150px;
   line-height: 180px;
@@ -690,7 +725,6 @@ body {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  width: 100%;
 }
 
 .callback-form-title {
@@ -707,7 +741,6 @@ body {
 .callback-form-descr {
   font-size: 17px;
   line-height: 150%;
-  text-align: center;
   color: var(--txt-c-light);
   width: 260px;
   text-align: center;
@@ -721,7 +754,7 @@ body {
   padding: 10px 10px 15px 10px;
   border-bottom: 1px solid var(--c-grey-blue);
   text-align: center;
-  color: var(--txt-c-light);
+  color: var(--c-grey-blue);
   margin-bottom: 30px;
 }
 
@@ -734,6 +767,7 @@ body {
 .calculator {
   background: var(--c-dark);
 }
+
 .calculator .container {
   padding-bottom: 75px;
 }
@@ -776,7 +810,7 @@ body {
 }
 
 .calculator-form {
-  background-color: var(--c-light);
+  background: var(--c-light);
   padding: 30px 25px;
 }
 
@@ -793,15 +827,17 @@ body {
   flex-direction: column;
   margin-bottom: 30px;
 }
+
 .calculator-form-select {
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--c-grey-light);
   padding: 5px 0 17px 0;
+  outline: none;
 }
 
 .calculator-form-input-field {
-  margin: 10px;
+  margin-right: 10px;
 }
 
 .calculator-form-input-radio-container {
@@ -811,17 +847,20 @@ body {
 
 .calculator-form-input-label {
   margin-right: 15px;
+  font-weight: normal;
   font-size: 17px;
   line-height: 150%;
-  color: var(--c-dark);
+  color: var(--txt-c-dark);
 }
+
 .calculator-form-total-cost {
   font-weight: bold;
   font-size: 36px;
   line-height: 150%;
+  color: var(--txt-c-dark);
   margin: 0;
-  color: var(--c-dark);
 }
+
 .calculator-form-total {
   font-weight: bold;
   font-size: 17px;
@@ -830,7 +869,7 @@ body {
   margin: 0;
 }
 
-/* FUTER SECTION */
+/* FOOTER SECTION */
 
 .footer-my-name {
   font-weight: bold;
@@ -935,9 +974,11 @@ body {
     padding-bottom: 70px;
     min-width: 640px;
   }
+
   .mobile-element {
     display: none;
   }
+
   .tablet-element {
     display: block;
   }
@@ -947,11 +988,14 @@ body {
     line-height: 43px;
     margin-bottom: 0;
   }
+
   .front-page-profession {
     margin: 20px 0 30px 0;
     font-size: 55px;
     line-height: 66px;
+    width: 410px;
   }
+
   .profession-part-1 {
     margin-right: 40px;
   }
@@ -960,34 +1004,42 @@ body {
   }
 
   .front-page-description {
-    font-style: 17px;
+    font-size: 17px;
     line-height: 150%;
-    width: 380px;
-    margin-top: 0;
+    width: 385px;
+    margin: 0 0 40px 0;
   }
+
   .front-page-my-info {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 60px;
   }
+
   .front-page-my-photo {
     width: 140px;
-    margin: 35px;
+    margin-right: 35px;
+    margin-bottom: 0;
   }
+
   .front-page-my-decr {
     text-align: left;
   }
+
   .front-page-my-video-btn {
     margin-bottom: 0;
   }
+
   .front-page-laptop {
     width: 400px;
     margin-bottom: 90px;
   }
+
   .front-page-about-me-container {
     align-items: flex-start;
   }
+
   .about .container {
     position: relative;
   }
@@ -1041,9 +1093,6 @@ body {
     margin: 0 25px 40px 25px;
   }
 
-  .callback-form-container {
-    padding: 75px 30px 80px 30px;
-  }
   .callback-form .container,
   .personal-projects .container,
   .team-projects .container {
@@ -1055,12 +1104,18 @@ body {
     line-height: 240px;
     top: 19px;
   }
+
+  .callback-form-container {
+    padding: 75px 30px 80px 30px;
+  }
+
   .callback-form-title {
     font-size: 36px;
     line-height: 43px;
     width: 386px;
   }
 
+  .callback-form-submit,
   .callback-form-input,
   .callback-form-descr {
     width: 386px;
@@ -1068,14 +1123,14 @@ body {
   }
   .callback-form-submit {
     margin-top: 10px;
-    width: 386px;
-    box-sizing: border-box;
   }
+
   .calculator .container {
     align-items: normal;
     position: relative;
     padding: 20px 10px 90px 10px;
   }
+
   .calculator-title {
     width: 605px;
     font-size: 50px;
@@ -1083,6 +1138,7 @@ body {
     text-align: left;
     margin-bottom: 40px;
   }
+
   .calculator-descr {
     display: flex;
     flex-direction: column;
@@ -1091,6 +1147,7 @@ body {
     font-size: 36px;
     line-height: 150%;
   }
+
   .calculator-icon {
     position: absolute;
     right: 10px;
@@ -1098,18 +1155,22 @@ body {
     width: 344px;
     z-index: 1;
   }
+
   .calculator-text {
     text-align: left;
     width: 330px;
     margin-top: 10px;
   }
+
   .calculator-form {
     z-index: 2;
     padding: 60px 80px 70px 80px;
   }
+
   .calculator-form-title {
     line-height: 150%;
   }
+
   .footer .container {
     align-items: flex-start;
   }
@@ -1127,5 +1188,139 @@ body {
 
   .footer-my-mail {
     margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    max-width: var(--desktop-lg);
+  }
+  .tablet-element {
+    display: none;
+  }
+
+  .desktop-element {
+    display: block;
+  }
+
+  .front-page-my-info {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .front-page-profession {
+    font-size: 70px;
+    line-height: 84px;
+    width: 510px;
+    margin-left: -60px;
+    margin-bottom: 35px;
+    z-index: 2;
+  }
+
+  .experience-wrapper {
+    order: 1;
+  }
+
+  .front-page-main-info {
+    align-items: flex-start;
+    order: 2;
+    z-index: 2;
+    position: relative;
+  }
+
+  .front-page-my-photo {
+    position: absolute;
+    width: 256px;
+    z-index: 1;
+    right: -125px;
+    bottom: 330px;
+  }
+
+  .front-page-description {
+    text-align: left;
+    margin-bottom: 65px;
+    z-index: 2;
+  }
+
+  .front-page-gallery-btn {
+    width: 387px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 90px;
+  }
+  .profession-part-2 {
+    margin-left: 60px;
+  }
+
+  .front-page-wrapper {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 115px;
+  }
+
+  .front-page-laptop {
+    position: absolute;
+    bottom: -64px;
+    right: 0;
+    z-index: 1;
+  }
+  .front-page-my-info {
+    order: 3;
+  }
+
+  .front-page-my-decr {
+    text-align: right;
+  }
+
+  .front-page-my-name {
+    margin-top: 0;
+    z-index: 2;
+  }
+
+  .experience-title {
+    text-align: left;
+  }
+
+  .experience-skill {
+    margin-left: 0;
+  }
+
+  .team-project-item-wrapper,
+  .personal-project-item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .team-project-item,
+  .personal-project-item {
+    width: calc(50% - 20px);
+  }
+
+  .team-project-item:nth-child(odd),
+  .personal-project-item:nth-child(odd) {
+    margin: 0 20px 40px 0;
+  }
+
+  .team-project-item:nth-child(even),
+  .personal-project-item:nth-child(even) {
+    margin: 0 0 40px 20px;
+  }
+
+  .team-projects-title,
+  .personal-projects-title {
+    font-size: 70px;
+    line-height: 84px;
+    width: 530px;
+  }
+
+  .team-projects-title-bgd {
+    font-size: 250px;
+    line-height: 300px;
+    top: 35px;
+    left: 274px;
   }
 }

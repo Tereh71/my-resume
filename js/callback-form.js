@@ -1,57 +1,59 @@
 const callbackForm = document.querySelector('.callback-form-container');
-const requestRecivedModal = document.querySelector('#reqvest-received');
+const requestReceivedModal = document.querySelector('#request-received');
 
 const userName = document.querySelector('#callback-form-input-name');
-
 const userEmail = document.querySelector('#callback-form-input-email');
-
 const userPhone = document.querySelector('#callback-form-input-phone');
 
-userPhone.addEventListener('click', function () {
-    if (!userPhone.value.trim()) { 
+userPhone.addEventListener('click', function() {
+    if (!userPhone.value.trim()) {
         userPhone.value = '+380';
     }
-
 });
 
-userPhone.addEventListener('blur', function () {
-    if (userPhone.value === '+380') { 
+userPhone.addEventListener('blur', function() {
+    if (userPhone.value === '+380') {
         userPhone.value = '';
     }
-
 });
 
-
-callbackForm.addEventListener('submit', function (event) {
+callbackForm.addEventListener('submit', function(event){
     event.preventDefault();
     let hasError = false;
 
     if (!userName.value.trim()) {
         userName.classList.add('callback-form-input-error');
         hasError = true;
-    } else { userName.classList.remove('callback-form-input-error'); }
+    } else {
+        userName.classList.remove('callback-form-input-error');
+    }
 
-    if (!userEmail.value.trim() || !isEmailValid(userEmail.value)) { 
+    if (!userEmail.value.trim() || !isEmailValid(userEmail.value)) {
         userEmail.classList.add('callback-form-input-error');
-        hasError = true; 
-    }else { userEmail.classList.remove('callback-form-input-error'); }
-    
-    if (!userPhone.value.trim() || !isPhoneValid(userPhone.value)) { 
+        hasError = true;
+    } else {
+        userEmail.classList.remove('callback-form-input-error');
+    }
+
+    if (!userPhone.value.trim() || !isPhoneValid(userPhone.value)) {
         userPhone.classList.add('callback-form-input-error');
-        hasError = true; 
-    } else { userPhone.classList.remove('callback-form-input-error'); }
-    
-    if (hasError) { 
+        hasError = true;
+    } else {
+        userPhone.classList.remove('callback-form-input-error');
+    }
+
+    if (hasError) {
         return;
     }
+
     userName.value = '';
     userEmail.value = '';
     userPhone.value = '';
 
+    requestReceivedModal.classList.add('modal-active');
 
-    requestRecivedModal.classList.add('modal-active');
-    setTimeout(function () {
-        requestRecivedModal.classList.remove('modal-active');
+    setTimeout(function() {
+        requestReceivedModal.classList.remove('modal-active');
     }, 2000);
 });
 

@@ -231,7 +231,7 @@ body {
 /* MY VIDEO MODAL */
 
 .my-video-content {
-  width: 100%;
+  width: auto;
 }
 
 .my-video-container {

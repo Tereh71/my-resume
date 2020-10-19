@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/font-awesome.min.css" />
   <link rel="stylesheet" href="css/choices.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/aos.css" />
 </head>
 
 <body>
@@ -51,7 +52,8 @@
 
       <div class="front-page-wrapper">
         <div class="front-page-main-info">
-          <img src="img/my-photo.jpg" alt="my photo" class="front-page-my-photo desktop-element" />
+          <img src="img/my-photo.jpg" alt="my photo" class="front-page-my-photo desktop-element" data-aos="fade-down"
+            data-aos-delay="1500" />
           <h1 class="front-page-my-name">[Volodymyr Lositskyi]</h1>
 
           <h2 class="front-page-profession">
@@ -72,8 +74,8 @@
         <div class="front-page-my-info">
           <img src="img/my-photo.jpg" alt="my photo" class="front-page-my-photo mobile-element tablet-element" />
 
-          <div class="front-page-about-me-container">
-            <p class="front-page-my-decr mobile-element">About me in 2 minutes</p>
+          <div class="front-page-about-me-container" data-aos="fade-left" data-aos-delay="1000">
+            <p class=" front-page-my-decr mobile-element">About me in 2 minutes</p>
 
             <p class="front-page-my-decr tablet-element desktop-element">
               About me <br>in 2 minutes
@@ -88,7 +90,7 @@
 
         <img src="img/laptop.svg" alt="" class="front-page-laptop" />
 
-        <div class="experience-wrapper">
+        <div class="experience-wrapper" data-aos="fade-right" data-aos-delay="500">
           <div class="experience-container">
             <h3 class="experience-title">My Coding Skills & Experience</h3>
 
@@ -168,7 +170,8 @@
   <section class="about" id="about">
     <div class="container container-left">
       <div class="about-content-wrapper">
-        <h3 class="section-title about-title">I code things from scratch_</h3>
+        <h3 class="section-title about-title" data-aos="fade-right" data-aos-delay="500">I code things from scratch_
+        </h3>
 
         <p class="about-descr mobile-element">
           <span>[and help to</span>
@@ -176,7 +179,7 @@
           <span>apps]</span>
         </p>
 
-        <div class="tablet-element desktop-element"></div>
+        <div class="tablet-element desktop-element" data-aos="fade-right" data-aos-delay="1000"></div>
         <p class="about-descr">
           <span>[and help to</span>
           <span>create great web</span>
@@ -189,7 +192,7 @@
             <img src="img/web-apps-laptop.png" alt="web apps laptop" class="about-img" />
           </p>
         </div>
-        <p class="about-text mobile-element desktop-element">
+        <p class="about-text mobile-element desktop-element" data-aos="fade-right" data-aos-delay="1100">
           / I will help you to create a high-performance Landing Page,
           functional corporate website for your business, interactive web app
           for SaaS, startup, or other services.
@@ -199,7 +202,7 @@
           functional corporate website for your business, interactive web app
           for SaaS, startup, or other services.
         </p>
-        <p class="about-text">
+        <p class="about-text" data-aos="fade-right" data-aos-delay="1200">
           / My specialization is front-end development — client side of the web.
           But I also have full-stack developer experience.
         </p>
@@ -216,7 +219,7 @@
 
   <section class="personal-projects" id="projects">
     <div class="container">
-      <h3 class="section-title personal-projects-title">
+      <h3 class="section-title personal-projects-title" data-aos="flip-left">
         My personal _projects
       </h3>
       <div class="personal-project-item-wrapper">
@@ -298,7 +301,7 @@
   <section class="team-projects">
     <div class="container">
       <span class="team-projects-title-bgd">TEAM</span>
-      <h3 class="section-title team-projects-title">Teamwork _projects</h3>
+      <h3 class="section-title team-projects-title" data-aos="flip-left">Teamwork _projects</h3>
       <div class="team-project-item-wrapper">
         <div class="team-project-item">
           <div class="personal-project-item-container">
@@ -365,7 +368,7 @@
         <h3 class="calculator-title section-title mobile-element">
           Calculate_ the cost of a future project
         </h3>
-        <h3 class="calculator-title section-title tablet-element desktop-element">
+        <h3 class="calculator-title section-title tablet-element desktop-element" data-aos="flip-left">
           Calculate_ <br>the cost of a <br>future project
         </h3>
         <div class="mobile-element">
@@ -675,6 +678,8 @@
   <script src="js/project-modals.js"></script>
   <script src="js/modals.js"></script>
   <script src="js/callback-form.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/animation-on-scroll.js"></script>
 </body>
 
 </html>

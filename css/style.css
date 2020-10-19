@@ -32,6 +32,7 @@
   /* animation */
   --animation-fast: 0.1s;
   --animation-slow: 0.3s;
+  --animation-transition: all 0.2s ease-in-out;
 }
 
 @font-face {
@@ -103,6 +104,12 @@ body {
   border: none;
   cursor: pointer;
   text-decoration: none;
+  transition: var(--animation-transition);
+}
+.accent-btn:hover {
+  outline: 1px solid var(--c-accent);
+  background: transparent;
+  color: var(--txt-c-accent);
 }
 
 .container {
@@ -203,6 +210,11 @@ body {
   text-decoration: none;
   text-align: center;
   margin-bottom: 35px;
+  transition: var(--animation-transition);
+}
+.mobile-menu-item:hover {
+  color: var(--txt-c-accent);
+  font-size: 24px;
 }
 
 .mobile-menu-my-tel {
@@ -359,6 +371,13 @@ body {
   align-items: center;
 }
 
+.logo-link {
+  transition: var(--animation-transition);
+}
+.logo-link:hover {
+  transform: scale(1.1);
+}
+
 .front-page-main-info,
 .front-page-my-info,
 .front-page-about-me-container {
@@ -476,6 +495,11 @@ body {
   align-items: center;
   margin-bottom: 35px;
   cursor: pointer;
+  transition: var(--animation-transition);
+}
+.front-page-my-video-btn:hover {
+  background: var(--c-accent);
+  color: var(--txt-c-light);
 }
 
 .front-page-my-video-btn .fa-play {
@@ -728,6 +752,7 @@ body {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .callback-form-title {
@@ -1236,6 +1261,9 @@ body {
   }
   .main-menu-item:last-child {
     padding: 0;
+  }
+  .main-menu-item:hover {
+    color: var(--txt-c-accent);
   }
 
   .front-page-my-info {
